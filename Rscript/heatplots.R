@@ -1,4 +1,4 @@
-source("main.R")
+## Be sure to run main.R first!
 
 ##############################
 ## Heat plots theoretical masses
@@ -113,3 +113,6 @@ jpeg("heat10.jpeg", width=1024, height=768)
 grid.arrange(theoheat10, expheat10, nrow=2)
 dev.off()
 
+pdf("heat10.pdf", height=9, width=15)
+grid.arrange(theoheat10, expheat10, nrow=2)
+dev.off()

@@ -1,4 +1,4 @@
-source("main.R")
+## Be sure to run main.R first!
 
 ##############################
 ## Scatterplot
