@@ -37,17 +37,17 @@ This lead to the following 11 modifications:
 
 Name | Abbreviation | Amino Acid
 ----:|-------------:|-----------:
-  Biotinylation|      Biotin |   K
+Biotinylation|      Biotin |   K
 Phosphorylation|     Phospho |   Y
 Phosphorylation|     Phospho |   T
 Phosphorylation|     Phospho |   S
-    Methylation|      Methyl |   E
-    Methylation|      Methyl |   D
-  O-Sulfonation|       Sulfo |   S
-  O-Sulfonation|       Sulfo |   T
-  O-Sulfonation|       Sulfo |   Y
-      dihydroxy| Dioxidation |   M
-  Crotonylation|    Crotonyl |   K
+ Methylation|      Methyl |   E
+ Methylation|      Methyl |   D
+ O-Sulfonation|       Sulfo |   S
+ O-Sulfonation|       Sulfo |   T
+ O-Sulfonation|       Sulfo |   Y
+ dihydroxy| Dioxidation |   M
+ Crotonylation|    Crotonyl |   K
 
 This leads to 2783 extra molecules: 
 - 11 modified single amino acids
