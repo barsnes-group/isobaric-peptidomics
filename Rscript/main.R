@@ -54,6 +54,19 @@ colnames(identifications)
 ## how many molecules of each type are in the theoretical database
 table(peptides$type)
 
+## make csv file with all spectra with TMT (more than 2 reporter ions)
+write.table(identifications[nReporter > 2, ], file = "TMTspectra.dat",
+            row.names=FALSE, sep=";")
+
+identifications[, nID := rowSums(identifications[, 20:26])]
+identifications[nReporter > 2 & nID == 1, .N]
+write.table(identifications[nReporter > 2 & nID == 1 & twoAAN == 1, ],
+            file = "uniqueDipeptide.tsv",
+            row.names=FALSE, sep="\t")
+write.table(identifications[nReporter > 2 & nID == 1 & threeAAN == 1, ],
+            file = "uniqueTripeptide.tsv",
+            row.names=FALSE, sep="\t")
+
 ## make lists of identifications
 ## for each type, each spectrum has a vector of strings, which are the names of the identifications (NA if spectrum is not identified as something of that type)
 sAA <- strsplit(identifications[nReporter > 2, singleAA], ",", fixed=TRUE)
@@ -77,10 +90,6 @@ idn <- sapply(seq_along(sAA), function (i) {
         nrids(tp[[i]]), nrids(tpm[[i]]),
         nrids(met[[i]]))
 })
-
-## make csv file with all spectra with TMT (more than 2 reporter ions)
-write.table(identifications[nReporter > 2, ], file = "TMTspectra.csv",
-            row.names=FALSE, sep=";")
 
 ## How many things have we identified?
 identifications[, .N] # 10479 spectra total
