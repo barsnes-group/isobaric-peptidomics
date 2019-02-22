@@ -70,4 +70,6 @@ Rscript/*.tif
 
 # Files produced by the script
 Rscript/*.csv
+Rscript/*.dat
+Rscript/*.tsv
 
